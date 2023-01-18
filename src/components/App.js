@@ -9,9 +9,9 @@ import ImagePopup from './ImagePopup.js';
 function App() {
 
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
-  const [isEditProfilePopupOpen, setisEditProfilePopupOpen] = React.useState(false);
-  const [isAddPlacePopupOpen, setisAddPlacePopupOpen] = React.useState(false);
-  const [isImagePopupOpen, setisImagePopupOpen] = React.useState(false);
+  const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
+  const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
+  const [isImagePopupOpen, setIsImagePopupOpen] = React.useState(false);
   const [selectedCard, setSelectedCard] = React.useState({});
 
   function handleEditAvatarClick() {
@@ -19,15 +19,15 @@ function App() {
   }
 
   function handleEditProfileClick() {
-    setisEditProfilePopupOpen(true);
+    setIsEditProfilePopupOpen(true);
   }
 
   function handleAddPlaceClick() {
-    setisAddPlacePopupOpen(true);
+    setIsAddPlacePopupOpen(true);
   }
 
   function handleCardClick(card) {
-    setisImagePopupOpen(true);
+    setIsImagePopupOpen(true);
     setSelectedCard({
       name: card.name,
       link: card.link
@@ -36,9 +36,9 @@ function App() {
 
   function closeAllPopups() {
     setIsEditAvatarPopupOpen(false);
-    setisEditProfilePopupOpen(false);
-    setisAddPlacePopupOpen(false);
-    setisImagePopupOpen(false);
+    setIsEditProfilePopupOpen(false);
+    setIsAddPlacePopupOpen(false);
+    setIsImagePopupOpen(false);
   }
 
   return (
@@ -71,7 +71,6 @@ function App() {
           onClose={closeAllPopups}
           name="popup_edit"
           title="Редактировать профиль">
-          <>
             <label className="popup__field">
               <input className="popup__input popup__input_type_name" type="text" name="name" id="name" placeholder="Имя"
                 minLength="2" maxLength="40" required />
@@ -82,7 +81,6 @@ function App() {
                 minLength="2" maxLength="200" required />
               <span className="popup__error job-error"></span>
             </label>
-          </>
         </PopupWithForm>
 
         <PopupWithForm
