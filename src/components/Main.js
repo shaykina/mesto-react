@@ -25,7 +25,7 @@ function Main(props) {
       .catch((err) => {
         console.log(err);
       });
-  }, [userName, userInfo, userAvatar, cards])
+  }, [])
 
   return (
     <main className="content">
